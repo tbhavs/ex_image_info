@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.13.0">
-    <title>README – ExImageInfo v0.1.0</title>
+    <title>README – ExImageInfo v0.1.1</title>
     <link rel="stylesheet" href="dist/app-9c1e3d5aa2.css" />
     
     <script src="dist/sidebar_items.js"></script>
@@ -26,7 +26,7 @@
         ExImageInfo
       </h1>
       <h2 class="sidebar-projectVersion">
-        v0.1.0
+        v0.1.1
       </h2>
     </div>
     
@@ -62,6 +62,7 @@
 <h1>ExImageInfo</h1>
 <p><a href="http://elixir-lang.org"><img src="https://img.shields.io/badge/made_in-elixir-9900cc.svg?style=flat-square" alt="Elixir"/></a> <a href="https://raw.githubusercontent.com/rNoz/ex_image_info/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"/></a> <a href="https://github.com/parroty/excoveralls"><img src="https://cdn.rawgit.com/rNoz/ex_image_info/master/assets/coverage.svg" alt="ExCoveralls"/></a> <img src="https://cdn.rawgit.com/rNoz/ex_image_info/master/assets/tests.svg" alt="Tests"/></p>
 <p>ExImageInfo is an Elixir library to parse images (binaries) and get the dimensions, detected mime-type and overall validity for a set of image formats.</p>
+<h3><a href="https://github.com/rNoz/ex_image_info">GitHub repo</a> &nbsp;&nbsp; <a href="https://rnoz.github.io/ex_image_info">Docs</a> &nbsp;&nbsp; <a href="https://hex.pm/packages/ex_image_info">Hex.pm package</a></h3>
 <h2 id="table-of-contents" class="section-heading">
   <a href="#table-of-contents" class="hover-link"><i class="icon-link"></i></a>
    Table of Contents
@@ -183,11 +184,11 @@ for every image format (if applicable).</p>
   <a href="#installation" class="hover-link"><i class="icon-link"></i></a>
    Installation
 </h2><p>Add <code class="inline">ex_image_info</code> to your list of dependencies in <code class="inline">mix.exs</code>.</p>
-<p>From hex:</p>
+<p>From Hex:</p>
 <pre><code class="elixir">  def deps do
     [ 
       # ...
-      {:ex_image_info, &quot;~&gt; 0.1.0&quot;},
+      {:ex_image_info, &quot;~&gt; 0.1.1&quot;},
     ]
   end</code></pre>
 <p>Or GitHub:</p>
@@ -197,6 +198,9 @@ for every image format (if applicable).</p>
       {:ex_image_info, github: &quot;rNoz/ex_image_info&quot;},
     ]
   end</code></pre>
+<p>Then, use it:</p>
+<pre><code class="elixir">require ExImageInfo
+# ExImageInfo.seems? ...</code></pre>
 <h2 id="examples" class="section-heading">
   <a href="#examples" class="hover-link"><i class="icon-link"></i></a>
    Examples
