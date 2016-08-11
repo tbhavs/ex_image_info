@@ -364,7 +364,7 @@ maybe_png_binary |&gt; ExImageInfo.info :png
   
   <section class="docstring">
     <p>Detects the image format that seems to be the given binary (<em>guessed</em> version of <a href="ExImageInfo.html#seems?/2)"><code class="inline">ExImageInfo.seems?/2</code></a>.</p>
-<p>Returns the atom (valid <a href="#module-formats)">formats</a> if it matches, <code class="inline">nil</code> otherwise.</p>
+<p>Returns the valid <a href="#module-formats">format</a> (atom) if it matches, <code class="inline">nil</code> otherwise.</p>
 <h2>Examples</h2>
 <p><code class="inline">38 42 50 53</code> are the first 4 bytes in the <code class="inline">PSD</code> signature (<code class="inline">8BPS</code>).</p>
 <pre><code class="iex elixir">iex&gt; ExImageInfo.seems? &lt;&lt;0x38425053::size(32)&gt;&gt;
