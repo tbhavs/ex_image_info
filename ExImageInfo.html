@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.13.0">
-    <title>ExImageInfo – ExImageInfo v0.1.1</title>
+    <title>ExImageInfo – ExImageInfo v0.2.0</title>
     <link rel="stylesheet" href="dist/app-9c1e3d5aa2.css" />
     
     <script src="dist/sidebar_items.js"></script>
@@ -26,7 +26,7 @@
         ExImageInfo
       </h1>
       <h2 class="sidebar-projectVersion">
-        v0.1.1
+        v0.2.0
       </h2>
     </div>
     
@@ -59,7 +59,7 @@
 
 
       <h1>
-        <small class="visible-xs">ExImageInfo v0.1.1</small>
+        <small class="visible-xs">ExImageInfo v0.2.0</small>
         ExImageInfo
         
         
@@ -67,7 +67,7 @@
 
       
         <section id="moduledoc" class="docstring">
-          <p>ExImageInfo is an Elixir library to parse images (binaries) and get the dimensions, detected mime-type and overall validity for a set of image formats. Main module to parse a binary and get if it seems to be an image (validity), the mime-type (and variant detected) and the dimensions of the image, based on a specific image format.</p>
+          <p>ExImageInfo is an Elixir library to parse images (binaries) and get the dimensions (size), detected mime-type and overall validity for a set of image formats. Main module to parse a binary and get if it seems to be an image (validity), the mime-type (and variant detected) and the dimensions of the image, based on a specific image format.</p>
 <p>It has convention functions to guess the type of an image
 by trying the formats supported by the library.</p>
 <h2 id="module-main-features" class="section-heading">
@@ -101,9 +101,15 @@ by trying the formats supported by the library.</p>
 </li>
 <li><code class="inline">:gif</code>
 </li>
+<li><code class="inline">:ico</code> (new in <code class="inline">v0.2.0</code>)
+</li>
 <li><code class="inline">:jpeg</code>
 </li>
+<li><code class="inline">:jp2</code> (new in <code class="inline">v0.2.0</code>)
+</li>
 <li><code class="inline">:png</code>
+</li>
+<li><code class="inline">:pnm</code> (new in <code class="inline">v0.2.0</code>)
 </li>
 <li><code class="inline">:psd</code>
 </li>
@@ -142,13 +148,28 @@ mime-type).</p>
 <td style="text-align: left"><code class="inline">image/gif</code></td><td style="text-align: left"><code class="inline">GIF89a</code></td><td style="text-align: left">89a gif spec</td>
 </tr>
 <tr>
+<td style="text-align: left"><code class="inline">image/x-icon</code></td><td style="text-align: left"><code class="inline">ICO</code></td><td style="text-align: left"></td>
+</tr>
+<tr>
 <td style="text-align: left"><code class="inline">image/jpeg</code></td><td style="text-align: left"><code class="inline">baseJPEG</code></td><td style="text-align: left">baseline JPEG</td>
 </tr>
 <tr>
 <td style="text-align: left"><code class="inline">image/jpeg</code></td><td style="text-align: left"><code class="inline">progJPEG</code></td><td style="text-align: left">progressive JPEG</td>
 </tr>
 <tr>
+<td style="text-align: left"><code class="inline">image/jp2</code></td><td style="text-align: left"><code class="inline">JP2</code></td><td style="text-align: left">JPEG2000</td>
+</tr>
+<tr>
 <td style="text-align: left"><code class="inline">image/png</code></td><td style="text-align: left"><code class="inline">PNG</code></td><td style="text-align: left"></td>
+</tr>
+<tr>
+<td style="text-align: left"><code class="inline">image/x-portable-anymap</code></td><td style="text-align: left"><code class="inline">PNMpbm</code></td><td style="text-align: left">Portable BitMap</td>
+</tr>
+<tr>
+<td style="text-align: left"><code class="inline">image/x-portable-anymap</code></td><td style="text-align: left"><code class="inline">PNMpgm</code></td><td style="text-align: left">Portable GrayMap</td>
+</tr>
+<tr>
+<td style="text-align: left"><code class="inline">image/x-portable-anymap</code></td><td style="text-align: left"><code class="inline">PNMppm</code></td><td style="text-align: left">Portable PixMap</td>
 </tr>
 <tr>
 <td style="text-align: left"><code class="inline">image/psd</code></td><td style="text-align: left"><code class="inline">PSD</code></td><td style="text-align: left"></td>
@@ -168,6 +189,12 @@ mime-type).</p>
 </table>
 <p>The variant type is created just to provide a bit more of information
 for every image format (if applicable).</p>
+<p><em>Note</em>: <code class="inline">:ico</code> returns the dimensions of the largest image contained (not the first found).</p>
+<p>The guessing functions try to detect the format of the binary by testing every available type based on its global usage (popularity, <a href="https://w3techs.com/technologies/overview/image_format/all">usage of image file formats</a>, but still keeping the <code class="inline">:png</code> as the first one):</p>
+<ul>
+<li><code class="inline">:png</code>, <code class="inline">:jpeg</code>, <code class="inline">:gif</code>, <code class="inline">:bmp</code>, <code class="inline">:ico</code>, <code class="inline">:tiff</code>, <code class="inline">:webp</code>, <code class="inline">:psd</code>, <code class="inline">:jp2</code>, <code class="inline">:pnm</code>
+</li>
+</ul>
 
         </section>
       

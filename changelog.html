@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.13.0">
-    <title>CHANGELOG – ExImageInfo v0.1.1</title>
+    <title>CHANGELOG – ExImageInfo v0.2.0</title>
     <link rel="stylesheet" href="dist/app-9c1e3d5aa2.css" />
     
     <script src="dist/sidebar_items.js"></script>
@@ -26,7 +26,7 @@
         ExImageInfo
       </h1>
       <h2 class="sidebar-projectVersion">
-        v0.1.1
+        v0.2.0
       </h2>
     </div>
     
@@ -59,12 +59,52 @@
 
 
 <h1>CHANGELOG</h1>
+<h2 id="v0-2-0-2017-06-17" class="section-heading">
+  <a href="#v0-2-0-2017-06-17" class="hover-link"><i class="icon-link"></i></a>
+   v0.2.0 (2017-06-17)
+</h2><p><strong>Warnings:</strong></p>
+<ul>
+<li>Use with caution the formats <em>ico</em>, <em>jp2</em> and the family <em>pnm</em>. They are implemented without following other libraries (just reading the specs - sometimes working with old drafts like <em>jp2</em>). You can support this library by providing more tests and image <em>fixtures</em> or requesting other variants to be tested.
+</li>
+</ul>
+<p><strong>Enhancements:</strong></p>
+<ul>
+<li>The guessing function is ordered by global usage <a href="https://w3techs.com/technologies/overview/image_format/all">usage of image file formats</a>, but still keeping <em>png</em> as the first one.
+</li>
+<li>Added support for <em>ico</em>, <em>jp2</em> (<em>jpeg 2000</em>) and the collection of <em>pnm</em> (<em>pbm</em>, <em>pgm</em> and <em>ppm</em>)
+</li>
+<li><em>ico</em> gets the dimensions of the largest image contained (not the first found)
+</li>
+</ul>
+<p><strong>Statistics:</strong></p>
+<ul>
+<li>54 TDD Tests
+</li>
+<li>Code coverage of 98.3%
+</li>
+<li>10 image formats supported
+</li>
+</ul>
+<p><strong>News:</strong></p>
+<ul>
+<li>New minor version (<code class="inline">0.2.0</code>) due to the three new image formats supported.
+</li>
+</ul>
 <h2 id="v0-1-1-2016-08-12" class="section-heading">
   <a href="#v0-1-1-2016-08-12" class="hover-link"><i class="icon-link"></i></a>
    v0.1.1 (2016-08-12)
 </h2><p><strong>Enhancements:</strong></p>
 <ul>
 <li>Warnings corrected (compiling)
+</li>
+</ul>
+<p><strong>Statistics:</strong></p>
+<ul>
+<li>34 TDD Tests
+</li>
+<li>Code coverage of 97.6%
+</li>
+<li>7 image formats supported
 </li>
 </ul>
 <p><strong>News:</strong></p>
